@@ -3,11 +3,12 @@ from rest_framework import routers
 from rest_framework.authtoken import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
-from rifas.api import RifaViewSet, UsuarioViewSet
+from rifas.api import RifaViewSet, UsuarioViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r'rifas', RifaViewSet)
 router.register(r'usuarios', UsuarioViewSet)
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
